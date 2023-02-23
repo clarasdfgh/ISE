@@ -1,0 +1,60 @@
+- **Cómo se recupera el token de jmeter, qué parámetros usar**
+- **Qué hacer para un get de la api**
+- **Contras de ab, por qué no nos sirve**
+- **Qué comando usar para lanzar un test en phoronix**
+  - phoronix-test-suite benchmark TEST
+  - **Qué test has usado, objetivo y métrica**
+    - DBENCH is a tool to generate I/O workloads to either a filesystem or to a networked CIFS or NFS server. It can even talk to an iSCSI target. DBENCH can be used to stress a filesystem or a server to see which workload it becomes saturated and can also be used for preditcion analysis to determine "How many concurrent clients/applications performing this workload can my server handle before response starts to lag?"
+    - **dbench** [*options*]*numclients*
+
+- **Qué es un benchmark**
+  - Un análisis que muestra las prestaciones del sistema.
+- **Qué hay que tener en cuenta al ejecutar un benchmark**
+  - Qué parte del sistema analiza. 
+  - Qué mide el benchmark. 
+  - Si hay otros procesos usando el sistema a la vez que el benchmark.
+- **Qué es phoronix**
+  - Una plataforma que permite ejecutar benchmarks.
+- **Cuál NO es un comando para ejecutar un test TEST en phoronix?**
+  - phoronix-test-suite TEST
+  - SI son comandos válidos
+    - phoronix-test-suite run TEST 
+    - phoronix test-suite benchmark TEST
+- **Cómo se listan los test de phoronix**
+  - phoronix-test-suite list-available-tests
+- **Cómo se instala un test TEST en phoronix**
+  - phoronix-test-suite install TEST
+- **Para qué sirve ab**
+  - Mostrar las peticiones que un servidor de http puede servir.
+- **Qué ventajas tienen los contenedores frente a las VM**
+  - Los contenedores ocupan menos espacio, tienen mejor portabilidad y necesitan menos recursos.
+- **Cómo se añade el usuario USER al grupo docker?**
+  - sudo usermod –aG docker USER
+- **De cuántas URL dispone la aplicación**
+  - /auth/login para el inicio de sesión y /alumnos/alumno para consultar información.
+- **Qué puerto usa nodeJS con MongoDB para la aplicación**
+  - 27017
+- **Qué puerto usa jmeter para peticiones de la aplicación?**
+  - 3000
+- **Cuántos grupos de hebras se usan para la aplicación?**
+  - Dos, administradores y alumnos, para que cada grupo haga funciones diferentes.
+- **Podría usarse un sólo grupo de hebras?**
+  - Sí, usando primero un grupo de alumnos y después otro de administradores, aunque le quitaría realismo a la aplicación.
+- **Por qué se parametriza el host para usar jmeter con la aplicación?**
+  - Porque puede que la aplicación esté en una dirección IP que no conocemos.
+- **Cuál es mejor para realizar benchmarks con concurrencia real?**
+  - jmeter
+- **¿Qué hace el comando docker-compose up?**
+  - Inicia una aplicación compuesta de varios dockerfile.
+- **Para qué se usan los csv de la aplicación?**
+  - Para que los alumnos y los administradores inicien sesión.
+- **Qué hace el comando `ab –n 20 –c 10 192.168.56.105`?**
+  - Ejecutar un benchmark con 20 peticiones HTTP que se envían concurrentemente en grupos de 10.
+- **Para qué se usa la petición de POST en la aplicación?**
+  - Para pedir el token del administrador o alumno.
+- **Para qué se usa la petición de GET en la aplicación?**
+  - Para recuperar la información del administrador o alumno.
+- **Para qué sirve el fichero .yml?**
+  - Para levantar varios docker usando el comando docker-compose up.
+- **Qué hace el comando `docker-compose up –d`?**
+  - Montar una aplicación con varios docker, pero sin mostrar las peticiones.
